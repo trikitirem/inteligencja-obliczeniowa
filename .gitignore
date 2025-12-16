@@ -1,14 +1,63 @@
-# Rust build artifacts
-/target/
-**/*.rs.bk
-*.pdb
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Cargo lock file (uncomment if this is a library crate)
-# Cargo.lock
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
 
 # IDE and editor files
-.vscode/
-.idea/
 *.swp
 *.swo
 *~
@@ -21,16 +70,6 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# Debug files
-*.pdb
-
-# Coverage reports
-tarpaulin-report.html
-lcov.info
-
-# Documentation
-/doc/
 
 # Backup files
 *.bak
@@ -48,3 +87,7 @@ lcov.info
 # Test artifacts
 /test-results/
 /coverage/
+
+# Project specific
+wyniki/*.json
+!wyniki/.gitkeep

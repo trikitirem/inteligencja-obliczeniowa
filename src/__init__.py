@@ -1,0 +1,4 @@
+"""
+System Monitorowania Algorytmów TSP
+"""
+
