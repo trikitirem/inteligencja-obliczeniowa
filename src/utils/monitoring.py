@@ -21,7 +21,7 @@ class AlgorithmResult:
     parameters: Dict[str, str] = field(default_factory=dict)
     route_length: float = 0.0
     route: List[int] = field(default_factory=list)
-    execution_time_ms: int = 0
+    execution_time_s: float = 0.0
     iterations: int = 0
     start_timestamp: datetime = field(
         default_factory=lambda: datetime.now(timezone.utc)
@@ -57,9 +57,9 @@ class AlgorithmResult:
         self.route = route
         return self
 
-    def set_execution_time(self, time_ms: int) -> "AlgorithmResult":
-        """Ustawia czas wykonania w milisekundach."""
-        self.execution_time_ms = time_ms
+    def set_execution_time(self, time_s: float) -> "AlgorithmResult":
+        """Ustawia czas wykonania w sekundach."""
+        self.execution_time_s = time_s
         return self
 
     def set_iterations(self, iterations: int) -> "AlgorithmResult":
@@ -74,7 +74,7 @@ class AlgorithmResult:
             "parameters": self.parameters,
             "route_length": self.route_length,
             "route": self.route,
-            "execution_time_ms": self.execution_time_ms,
+            "execution_time_s": self.execution_time_s,
             "iterations": self.iterations,
             "start_timestamp": self.start_timestamp.isoformat(),
             "additional_metrics": self.additional_metrics,

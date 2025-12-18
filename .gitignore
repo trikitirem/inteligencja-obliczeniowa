@@ -88,6 +88,3 @@ Thumbs.db
 /test-results/
 /coverage/
 
-# Project specific
-wyniki/*.json
-!wyniki/.gitkeep

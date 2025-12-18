@@ -27,7 +27,7 @@ class TspDataset(Enum):
         project_root = Path(__file__).parent.parent.parent
         mapping = {
             TspDataset.TSP_48: project_root / "dane" / "TSP_48.csv",
-            TspDataset.TSP_76: project_root / "dane" / "TSP-76.csv",
+            TspDataset.TSP_76: project_root / "dane" / "TSP_76.csv",
             TspDataset.TSP_127: project_root / "dane" / "TSP_127.csv",
         }
         return str(mapping[self])
@@ -68,14 +68,14 @@ def load_tsp_data(file_path: str) -> DistanceMatrix:
     matrix = []
     
     try:
-        with open(file_path, 'r', encoding='utf-8') as file:
+        with open(file_path, 'r', encoding='utf-8-sig') as file:
             csv_reader = csv.reader(file, delimiter=';')
             
             for row in csv_reader:
                 processed_row = []
                 for field in row:
-                    # Zamień przecinek na kropkę jako separator dziesiętny
-                    normalized_field = field.replace(',', '.')
+                    # Usuń BOM i białe znaki, zamień przecinek na kropkę jako separator dziesiętny
+                    normalized_field = field.strip().replace(',', '.')
                     try:
                         value = float(normalized_field)
                         processed_row.append(value)
@@ -108,17 +108,4 @@ def load_tsp_dataset(dataset: TspDataset) -> DistanceMatrix:
     """
     return load_tsp_data(dataset.file_path())
 
-
-if __name__ == "__main__":
-    # Kod testowy
-    import sys
-    
-    # Test z TSP_48
-    try:
-        matrix = load_tsp_dataset(TspDataset.TSP_48)
-        print(f"Loaded {len(matrix)} cities from {TspDataset.TSP_48.name()}")
-        print(f"Distance from city 5 to city 10: {matrix[5][10]:.2f}")
-    except Exception as e:
-        print(f"Error: {e}", file=sys.stderr)
-        sys.exit(1)
 
