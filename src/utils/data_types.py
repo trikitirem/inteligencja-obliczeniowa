@@ -17,4 +17,6 @@ class AlgorithmName(Enum):
     
     # Iterative Hill Climbing
     IHC = "ihc"
+    # Simulated Annealing
+    SA = "sa"
 
