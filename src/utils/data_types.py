@@ -17,4 +17,5 @@ class AlgorithmName(Enum):
     
     # Iterative Hill Climbing
     IHC = "ihc"
-
+    # Tabu Search
+    TABU = "tabu"

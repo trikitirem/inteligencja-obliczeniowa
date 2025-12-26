@@ -16,6 +16,9 @@ Projekt w Pythonie do monitorowania i analizowania algorytmów Problemu Komiwoja
 ```bash
 # Przykład algorytmu wspinaczki z multistartem
 python src/ihc.py
+
+# Przykład algorytmu Tabu Search
+python src/tabu_search.py
 ```
 
 ## Struktura Projektu
@@ -25,6 +28,7 @@ python src/ihc.py
 ├── src/                 # Kod źródłowy projektu
 │   ├── main.py         # Główny punkt wejścia aplikacji
 │   ├── ihc.py          # Implementacja algorytmu wspinaczki z multistartem
+│   ├── tabu_search.py  # Implementacja algorytmu Tabu Search
 │   └── utils/          # Moduły pomocnicze
 │       ├── data_loader.py    # Ładowanie danych TSP z plików CSV
 │       ├── data_types.py     # Definicje typów danych (DistanceMatrix, Tour, AlgorithmName)
